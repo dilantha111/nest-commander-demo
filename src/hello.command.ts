@@ -1,14 +1,13 @@
 import { Command, CommandRunner, Option } from 'nest-commander';
-import { AppService } from './app.service';
 
 @Command({ name: 'hello', description: 'a hello command' })
 export class HelloCommand extends CommandRunner {
-  constructor(private readonly appService: AppService) {
+  constructor() {
     super();
   }
 
   async run(): Promise<void> {
-    console.log(this.appService.getHello());
+    console.log('Hello World!');
   }
 
   @Option({
